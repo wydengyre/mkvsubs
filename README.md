@@ -1,4 +1,4 @@
-# Mkvsubs
+# mkvsubs
 
 `mkvsubs` is a script that simplifies extracting SRT and PGS/SUP subtitles from MKV files.
 
