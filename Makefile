@@ -15,7 +15,7 @@ unzip -q -d $@ $<
 endef
 
 clean:
-	rm -rf build deps generated
+	rm -rf build deps generated dist
 
 build: dist/mkvsubs.js
 
