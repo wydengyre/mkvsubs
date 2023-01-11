@@ -21,7 +21,7 @@ It will probably work with other releases.
 
 You can install from source:
 
-    make build
+    just build
     deno install --allow-read --allow-write --allow-run=mkvmerge,mkvextract dist/mkvsubs.js
 
 Or you can install from a release:
