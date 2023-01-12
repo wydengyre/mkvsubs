@@ -7,7 +7,7 @@ import {
   ALLFILES_EXPECTED,
   EXTRACTTRACKS_ALL_EXPECTED,
   PRINTTRACKS_EXPECTED,
-} from "../test/integration.test.ts";
+} from "../test/constants.ts";
 
 Deno.test("usage", async () => {
   const out = new Buffer();

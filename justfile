@@ -7,8 +7,16 @@ matroskaTestFilesPath := "deps/matroska-test-files"
 default:
     just --list --justfile {{justfile()}}
 
+ci: download-test-files unittest build itest
+
 clean:
     rm -rf build deps generated dist
+
+fmt:
+    deno fmt src test
+
+lint:
+    deno lint src test
 
 # download and unzip mkv files used in testing
 download-test-files:
@@ -29,3 +37,18 @@ itest: build
 build:
     mkdir -p dist
     deno bundle src/main.ts dist/mkvsubs.js
+
+docker-ci: clean docker-build-image docker-build-mkvsubs
+
+# build the docker image for building the project
+docker-build-image:
+    docker build -f Dockerfile.build -t mkvsubs-build .
+
+docker-build-mkvsubs:
+    #!/usr/bin/env sh
+    set -euxo pipefail
+    docker run --cidfile mkvsubs.build.cid mkvsubs-build
+    cid=`cat mkvsubs.build.cid`
+    rm mkvsubs.build.cid
+    mkdir -p dist
+    docker cp "$cid":/mkvsubs/dist/mkvsubs.js dist/mkvsubs.js
