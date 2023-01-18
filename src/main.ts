@@ -1,5 +1,5 @@
 import { MkvMerge, Track } from "./mkvmerge.ts";
-import { writeAll } from "std/streams/conversion.ts";
+import { writeAll } from "std/streams/write_all.ts";
 import { MkvExtract } from "./mkvextract.ts";
 
 const USAGE = "usage: mkvsubs [ALL | space-separated languages] [file]";
