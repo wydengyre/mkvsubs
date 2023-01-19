@@ -7,7 +7,10 @@ matroskaTestFilesPath := "deps/matroska-test-files"
 default:
     just --list --justfile {{justfile()}}
 
-ci: download-test-files unittest build itest
+ci: ci-fmt lint download-test-files unittest itest
+
+ci-fmt:
+    deno fmt --check src test
 
 clean:
     rm -rf build deps generated dist
