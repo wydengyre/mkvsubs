@@ -18,6 +18,9 @@ fmt:
 lint:
     deno lint src test
 
+update-deps:
+    deno run -A https://deno.land/x/udd/main.ts import_map.json
+
 # download and unzip mkv files used in testing
 download-test-files:
     mkdir -p {{parent_directory(matroskaTestZipPath)}} {{parent_directory(matroskaTestFilesPath)}}
