@@ -52,7 +52,7 @@ docker-build-image:
 
 docker-build-mkvsubs:
     #!/usr/bin/env sh
-    set -euxo pipefail
+    set -eux
     docker run --cidfile mkvsubs.build.cid mkvsubs-build
     cid=`cat mkvsubs.build.cid`
     rm mkvsubs.build.cid
