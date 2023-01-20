@@ -13,7 +13,7 @@ jobs:
       - uses: denoland/setup-deno@v1
       - uses: extractions/setup-just@v1
         with:
-          just-version: '1.11.0'
+          just-version: '1.12.0'
       - name: Update dependencies
         run: just update-deps
       - name: Create Pull Request
