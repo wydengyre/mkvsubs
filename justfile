@@ -51,10 +51,4 @@ docker-build-image:
     docker build -f Dockerfile.build -t mkvsubs-build .
 
 docker-build-mkvsubs:
-    #!/usr/bin/env sh
-    set -eux
-    docker run --cidfile mkvsubs.build.cid mkvsubs-build
-    cid=`cat mkvsubs.build.cid`
-    rm mkvsubs.build.cid
-    mkdir -p dist
-    docker cp "$cid":/mkvsubs/dist/mkvsubs.js dist/mkvsubs.js
+    deno run --allow-read=./ --allow-write=./ --allow-run=docker src/docker-build.ts
