@@ -51,4 +51,4 @@ docker-build-image:
     docker build -f Dockerfile.build -t mkvsubs-build .
 
 docker-build-mkvsubs:
-    deno run --allow-read=./ --allow-write=./ --allow-run=docker src/docker-build.ts
+    deno run --unstable --allow-read=./ --allow-write=./ --allow-run=docker src/docker-build.ts
