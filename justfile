@@ -43,12 +43,3 @@ itest: build
 build:
     mkdir -p dist
     deno bundle src/main.ts dist/mkvsubs.js
-
-docker-ci: clean docker-build-image docker-build-mkvsubs
-
-# build the docker image for building the project
-docker-build-image:
-    docker build -f Dockerfile.build -t mkvsubs-build .
-
-docker-build-mkvsubs:
-    deno run --unstable --allow-read=./ --allow-write=./ --allow-run=docker src/docker-build.ts
