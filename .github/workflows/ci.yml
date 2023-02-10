@@ -35,3 +35,10 @@ jobs:
 
       - name: Build and test
         run: just ci
+
+      - name: Archive artifact
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce #v3.2.1
+        with:
+          name: mkvsubs.js
+          path: dist/mkvsubs.js
+          retention-days: 7
