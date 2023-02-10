@@ -41,5 +41,4 @@ itest: build
 	deno test --allow-read --allow-write --allow-run test/integration.test.ts
 
 build:
-    mkdir -p dist
-    deno bundle src/main.ts dist/mkvsubs.js
+    deno run --unstable --check --allow-env --allow-read --allow-write --allow-run --allow-net scripts/build.ts
