@@ -1,6 +1,6 @@
 {
   "imports": {
-    "esbuild": "https://deno.land/x/esbuild@v0.18.14/mod.js",
+    "esbuild": "https://deno.land/x/esbuild@v0.18.15/mod.js",
     "std/": "https://deno.land/std@0.195.0/",
     "zod": "https://deno.land/x/zod@v3.21.4/mod.ts"
   }
