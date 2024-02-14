@@ -41,4 +41,4 @@ itest: build
 	deno test --allow-read --allow-write --allow-run test/integration.test.ts
 
 build:
-    deno run --unstable --check --allow-env --allow-read --allow-write --allow-run --allow-net scripts/build.ts
+    deno run --check --allow-env --allow-read --allow-write --allow-run --allow-net scripts/build.ts

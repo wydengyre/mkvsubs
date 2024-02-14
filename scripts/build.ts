@@ -25,7 +25,7 @@ async function main() {
     treeShaking: true,
   };
   const build = await esbuild.transform(cleanedImportMeta, buildOptions);
-  esbuild.stop();
+  await esbuild.stop();
   if (build.warnings.length > 0) {
     throw `Warnings from esbuild: ${build.warnings}`;
   }
